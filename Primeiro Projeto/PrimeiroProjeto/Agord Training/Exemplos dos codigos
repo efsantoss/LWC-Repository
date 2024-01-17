@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+</html>
+
+
+----------------------
+
+<apex:page>
+.
+.
+.
+</apex:page>
+
+----------------------
+
+<aura:component>
+  <aura: attribute name="message" type="string" default="Hellow, Aura"
+  <ui: outputText value="{v.message}">     
+</aura:component>
+
+----------------------
+
+<template>
+    <p> {message} </p>
+</template>
+
+
+<script>
+    import{ LightningElement, track} from LWC;
+    export default class MyLWCComponent extends LightningElement {
+        @track message = "Hellow LWC"
+}
+</script>

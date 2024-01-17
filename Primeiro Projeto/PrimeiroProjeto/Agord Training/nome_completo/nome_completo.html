@@ -1,0 +1,15 @@
+<template>
+    
+    <lightning-card title="Digitar nome completo">
+        <div class = " slds-m-horizontal_small">
+        <lightning-input label="Nome" value={nome} onchange={handlerNomeChange}></lightning-input>
+        <lightning-input label="Sobrenome" value={sobrenome} onchange={handlerSobrenomeChange}></lightning-input>
+        </div>
+
+        <div class="slds-m-around_medium">
+            Nome Completo: {nomeCompleto}
+        </div>
+
+    </lightning-card>
+    
+</template>

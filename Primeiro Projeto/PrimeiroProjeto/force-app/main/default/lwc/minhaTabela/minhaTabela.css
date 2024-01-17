@@ -1,0 +1,9 @@
+.tabela{
+    width: 100%;
+    border-color: brown;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-collapse: collapse;
+    border: 1px solid black;
+    padding: 8px;
+}
+
