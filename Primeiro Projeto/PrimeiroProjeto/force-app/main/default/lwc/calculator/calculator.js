@@ -17,7 +17,7 @@ export default class Calculator extends LightningElement {
     }
 
     handleSoma(event){
-        this.result = Number(this.primeiroNumero + this.segundoNumero)
+        this.result = Number(this.primeiroNumero) + Number(this.segundoNumero);
     }
     handleMult(event){
         this.result = Number(this.primeiroNumero * this.segundoNumero)
