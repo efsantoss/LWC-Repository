@@ -1,0 +1,24 @@
+<template>
+
+    <lightning-card title="Info Pessoais">
+        <div class="slds-m-horizontal_small">
+            <lightning-input label="Primeiro Nome" value={firstName} onchange={handlerFirstNameChange}></lightning-input>
+            <lightning-input label="Nome do meio" value={middleName} onchange={handlerMiddleNameChange}></lightning-input>
+            <lightning-input label="Ultimo nome" value={lastName} onchange={handlerLastNameChange}></lightning-input>
+
+        </div>
+
+        <div class="slds-m-vertical_medium">
+            Nome Completo: {fullName}
+        </div>
+
+        <div class="slds-m-vertical_small">
+            <lightning-input type="date" label="Data de Nascimento" value={dob} onchange={handleDobChange}></lightning-input>
+        </div>
+
+        <div class="slds-m-vertical_small">
+            Age: {age}
+        </div>
+    </lightning-card>
+    
+</template>

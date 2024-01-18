@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Info Pessoais">
+        <div class="slds-box">
+            <lightning-input type="number" name="number1" onchange={changeNumber1} value={primeiroNumero} label="Primeiro Numero" placeholder="Insira o primeiro Numero"></lightning-input>
+            <lightning-input type="number" name="number2" onchange={changeNumber2} value={segundoNumero} label="Segundo Numero" placeholder="Insira o segundo Numero"></lightning-input>
+                <div>
+                <lightning-button-group>
+                    <lightning-button variant="brand" label="Soma" title="Sum" onclick={handleSoma} class="slds-m-left_x-small"></lightning-button>
+                    <lightning-button variant="brand" label="Substração" title="Subtract" onclick={handleSub} class="slds-m-left_x-small"></lightning-button>
+                    <lightning-button variant="brand" label="Divisão" title="Divide" onclick={handleDivide} class="slds-m-left_x-small"></lightning-button>
+                    <lightning-button variant="brand" label="Multiplicação" title="Multiply" onclick={handleMult} class="slds-m-left_x-small"></lightning-button>
+
+                </lightning-button-group>
+                </div>
+                <div class="slds-m-vertical_medium">
+                    Resultado: {result}
+                </div>   
+        </div>
+    </lightning-card>
+</template>
