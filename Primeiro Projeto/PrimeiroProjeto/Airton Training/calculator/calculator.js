@@ -6,10 +6,6 @@ export default class Calculator extends LightningElement {
     @track result = ' '; 
     result;
 
-    connectedCallback(){
-        this.result = 0;
-    }
-
 
     changeNumber1(event){
         this.primeiroNumero = event.target.value;
@@ -33,11 +29,6 @@ export default class Calculator extends LightningElement {
         this.result = Number(this.primeiroNumero % this.segundoNumero)
     }
 
-    reset(event){
-        this.primeiroNumero = ' ';
-        this.segundoNumero = ' ';
-        this.result = ' ';
-    }
 
 
 }

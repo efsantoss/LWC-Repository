@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Cursos">
+        <ul>
+            <template for:each={todosOsCursos} for:item="curso">
+                <li key = {curso.nome}>
+                    <p> O Curso {curso.nome} tem duração de {curso.duracao}</p>
+                </li>
+
+            </template>
+        </ul>
+    </lightning-card>
+</template>

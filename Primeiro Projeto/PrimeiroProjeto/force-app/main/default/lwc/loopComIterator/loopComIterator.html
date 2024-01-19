@@ -1,0 +1,19 @@
+<template>
+    <lightning-card> 
+
+        <ul>
+            <template iterator:it={todosOsCursos}>
+                <li key={it.value.Nome}>
+                    <p>O curso de {it.value.Nome} tem duração de {it.value.duracao} horas. </p>
+                    <div if:true={it.first}>
+                        <p>Primeiro Nome da lista: {it.value.nome}</p>
+                    </div>
+                    <div if:true={it.last}>
+                        <p>Ultimo Nome da lista: {it.value.nome}</p>
+                    </div>
+                </li>
+            </template>
+        </ul>
+
+    </lightning-card>
+</template>
