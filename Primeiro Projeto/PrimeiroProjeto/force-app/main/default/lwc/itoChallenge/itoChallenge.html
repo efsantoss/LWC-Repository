@@ -1,14 +1,15 @@
 <template>
     <lightning-card>
         <div class="slds-m-horizontal_small">
-            <lightning-input label="Name" value={createdName} onchange={handleInputName} class="slds-m-horizontal_medium"></lightning-input>
-            <lightning-input label="Id" value={createdId} onchange={handleInputId} class="slds-m-horizontal_medium"></lightning-input>
+            <lightning-input label="Nome" value={createdName} onchange={handleInputName} class="slds-m-horizontal_medium"></lightning-input>
+            <lightning-input label="ID" value={createdId} onchange={handleInputId} class="slds-m-horizontal_medium"></lightning-input>
             <p></p>
             <div class="slds-m-horizontal_small slds-align_absolute-center">
-                <lightning-button label="Criar" title="Criar Contato" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+                <lightning-button label="Criar Contato" title="Criar Contato" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
             </div>
             <div>
-                Contato salvo: {name} ({id})
+                <p>Nome: {createdName}</p>
+                <p>ID: {createdId}</p>
             </div>
         </div>
     </lightning-card>

@@ -1,28 +1,9 @@
-import { LightningElement, wire, track, api } from 'lwc';
-import { getRecord } from 'lightning/uiRecordApi';
-import CONTACT_OBJECT from '@salesforce/schema/Contact';
-import CONTACT_NAME_FIELD from '@salesforce/schema/Contact.Name';
-import CONTACT_ID_FIELD from '@salesforce/schema/Contact.Id';
+import { LightningElement, api, track } from 'lwc';
+import createContact from '@salesforce/apex/ContactController.createContact';
 
-export default class ItoChallenge extends LightningElement {
-
+export default class ItoChallange extends LightningElement {
     @track createdName = '';
     @track createdId = '';
-
-    @api contactId;
-    @wire(getRecord, {
-        recordId: '$contactId',
-        fields: [CONTACT_NAME_FIELD, CONTACT_ID_FIELD]
-    })
-    contact;
-
-    get name() {
-        return this.contact.data.fields.Name.value;
-    }
-
-    get id() {
-        return this.contact.data.fields.Id.value;
-    }
 
     handleInputName(event) {
         this.createdName = event.target.value;
@@ -33,6 +14,15 @@ export default class ItoChallenge extends LightningElement {
     }
 
     handleClick() {
-        // Chame o método Apex para salvar o contato com os valores inseridos
+        createContact({ name: this.createdName, contactId: this.createdId })
+            .then(result => {
+                // Tratamento do resultado, como exibir uma mensagem de sucesso
+                alert('Contato inserido com sucesso');
+            })
+            .catch(error => {
+                // Tratamento de erro, como exibir uma mensagem de erro
+                console.error(error);
+                alert('Erro ao inserir contato');
+            });
     }
 }
