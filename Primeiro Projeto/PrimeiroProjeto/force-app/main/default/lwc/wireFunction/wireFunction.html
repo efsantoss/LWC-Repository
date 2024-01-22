@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Wire Function" icon-name="standard:account">
+        <template if:true={record}>
+            <div class="slds-m-around_medium">
+                <p>{name}</p>
+            </div>
+        </template>
+        <template if:true={error}>
+            {error}
+        </template>
+    </lightning-card>
+</template>
