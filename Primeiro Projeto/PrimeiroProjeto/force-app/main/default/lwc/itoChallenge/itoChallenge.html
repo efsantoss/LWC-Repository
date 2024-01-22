@@ -1,27 +1,48 @@
-
 <template>
     <lightning-card>
         <div class="slds-m-horizontal_small">
-        
-
             <lightning-input label="Name" value={createdName} onchange={handleInputName} class="slds-m-horizontal_medium"></lightning-input>
-            
-            
-            <lightning-input label="Id" value={createdId} onchange={handleInputName} class="slds-m-horizontal_medium"></lightning-input>
+            <lightning-input label="Id" value={createdId} onchange={handleInputId} class="slds-m-horizontal_medium"></lightning-input>
             <p></p>
             <div class="slds-m-horizontal_small slds-align_absolute-center">
-
-                <lightning-button label="Criar" title="Criar Contato" onclick={handleClick} class="slds-m-left_x-small" ></lightning-button>
-
-
+                <lightning-button label="Criar" title="Criar Contato" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
             </div>
-
             <div>
-                Contato salvo: {contactName}
+                Contato salvo: {name} ({id})
             </div>
-
         </div>
-
-        
     </lightning-card>
 </template>
+
+<script>
+import { LightningElement, api, track } from 'lwc';
+import { createContact } from 'yourApexClass'; // Substitua 'yourApexClass' pelo nome real do seu controlador Apex
+
+export default class YourComponentName extends LightningElement {
+    @track createdName = '';
+    @track createdId = '';
+
+    @api contactId;
+
+    handleInputName(event) {
+        this.createdName = event.target.value;
+    }
+
+    handleInputId(event) {
+        this.createdId = event.target.value;
+    }
+
+    handleClick() {
+        // Chame o método Apex para salvar o contato com os valores inseridos
+        createContact({ name: this.createdName, id: this.createdId })
+            .then(result => {
+                // Atualizar o valor exibido após o contato ser criado com sucesso
+                // Aqui você pode atualizar a exibição ou fazer outras ações necessárias
+            })
+            .catch(error => {
+                // Tratar erros aqui, se necessário
+                console.error(error);
+            });
+    }
+}
+</script>
