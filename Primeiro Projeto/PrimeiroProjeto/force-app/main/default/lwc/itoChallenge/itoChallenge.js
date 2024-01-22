@@ -1,5 +1,5 @@
 import { LightningElement, api, track } from 'lwc';
-import createContact from '@salesforce/apex/ContactController.createContact';
+import createContact from '@salesforce/apex/Ito.createContact';
 
 export default class ItoChallange extends LightningElement {
     @track createdName = '';
