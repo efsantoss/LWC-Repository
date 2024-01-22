@@ -1,5 +1,5 @@
 import { LightningElement, api, track } from 'lwc';
-import createContact from '@salesforce/apex/ContactController.createContact';
+import createContact from '@salesforce/apex/Ito.createContact';
 
 export default class ItoChallange extends LightningElement {
     @track createdName = '';
@@ -9,15 +9,21 @@ export default class ItoChallange extends LightningElement {
         this.createdName = event.target.value;
     }
 
-    handleInputId(event) {
-        this.createdId = event.target.value;
+    handleInputLastName(event) {
+        this.createdLastName = event.target.value;
     }
 
     handleClick() {
-        createContact({ name: this.createdName, contactId: this.createdId })
+        createContact({ firstName: this.createdName, lastName: this.createdLastName })
             .then(result => {
                 // Tratamento do resultado, como exibir uma mensagem de sucesso
-                alert('Contato inserido com sucesso');
+                alert(result);
+
+                // Disparar um evento personalizado para notificar outros componentes, se necessário
+                const successEvent = new CustomEvent('successcontactcreated', {
+                    detail: { message: 'Contato inserido com sucesso!' }
+                });
+                this.dispatchEvent(successEvent);
             })
             .catch(error => {
                 // Tratamento de erro, como exibir uma mensagem de erro
