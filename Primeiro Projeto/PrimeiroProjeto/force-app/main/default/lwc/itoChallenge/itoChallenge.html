@@ -13,36 +13,3 @@
         </div>
     </lightning-card>
 </template>
-
-<script>
-import { LightningElement, api, track } from 'lwc';
-import { createContact } from 'yourApexClass'; // Substitua 'yourApexClass' pelo nome real do seu controlador Apex
-
-export default class YourComponentName extends LightningElement {
-    @track createdName = '';
-    @track createdId = '';
-
-    @api contactId;
-
-    handleInputName(event) {
-        this.createdName = event.target.value;
-    }
-
-    handleInputId(event) {
-        this.createdId = event.target.value;
-    }
-
-    handleClick() {
-        // Chame o método Apex para salvar o contato com os valores inseridos
-        createContact({ name: this.createdName, id: this.createdId })
-            .then(result => {
-                // Atualizar o valor exibido após o contato ser criado com sucesso
-                // Aqui você pode atualizar a exibição ou fazer outras ações necessárias
-            })
-            .catch(error => {
-                // Tratar erros aqui, se necessário
-                console.error(error);
-            });
-    }
-}
-</script>
