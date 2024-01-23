@@ -29,8 +29,7 @@ export default class ItoChallange extends LightningElement {
             this.selectedType = 'PessoaJuridica__c';
         } else {
             // Zerar o tipo se não for nem CPF nem CNPJ
-            alert('Numero Invalido');
-            return;
+            this.selectedType = '';
         }
     }
 

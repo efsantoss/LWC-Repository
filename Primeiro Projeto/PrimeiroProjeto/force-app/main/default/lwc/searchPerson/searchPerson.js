@@ -27,11 +27,14 @@ export default class searchPerson extends LightningElement {
     }
 
     handleClick() {
-        // Lógica de manipulação dos resultados da busca, se necessário
+        // Verificar se há resultados na busca
         if (this.contacts.data && this.contacts.data.length > 0) {
+            // Exibir os resultados ou tomar a ação necessária
             console.log('Contatos encontrados:', this.contacts.data);
         } else {
+            // Nenhum resultado encontrado
             console.log('Nenhum contato encontrado');
+            alert('Contato inválido');
         }
     }
 }
