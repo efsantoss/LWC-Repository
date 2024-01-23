@@ -1,16 +1,15 @@
 <template>
-    <lightning-card>
-        <div class="slds-align_absolute-center">
-            Página de Cadastro
-        </div>
+    <lightning-card title="Pagina de Cadastro" icon-name="custom:custom15">
         <div class="slds-m-horizontal_small">
             <lightning-input 
+            style="background-color: blue;"
             label="Nome" 
             value={createdName} 
             onchange={handleInputName} 
             class="slds-m-horizontal_medium">
         </lightning-input>
             <lightning-input 
+            style="background-color: blue;"
             label="Sobrenome" 
             value={createdLastName} 
             onchange={handleInputLastName} 
@@ -18,6 +17,7 @@
         </lightning-input>
         
         <lightning-input
+            style="background-color: blue;"
             label="Documento"
             value={createdDocument}
             onchange={handleInputDocument}
