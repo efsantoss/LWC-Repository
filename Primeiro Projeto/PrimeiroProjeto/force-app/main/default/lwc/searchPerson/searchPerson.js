@@ -1,7 +1,7 @@
 import { LightningElement, track, wire } from 'lwc';
 import searchContacts from '@salesforce/apex/SearchContact.searchContacts';
 
-export default class searchPerson extends LightningElement {
+export default class SearchPerson extends LightningElement {
     @track searchName = '';
     @track searchLastName = '';
     @track searchDocument = '';
@@ -29,13 +29,15 @@ export default class searchPerson extends LightningElement {
     handleClick() {
         // Verificar se há resultados na busca
         if (this.contacts.data && this.contacts.data.length > 0) {
-            // Exibir os resultados ou tomar a ação necessária
-            console.log('Contatos encontrados:', this.contacts.data);
+            // Obter o primeiro contato encontrado
+            const firstContact = this.contacts.data[0];
+
+            // Exibir informações do contato encontrado
+            const alertMessage = `Nome: ${firstContact.FirstName}\nSobrenome: ${firstContact.LastName}\nTipo: ${firstContact.PessoaJuridica__c || firstContact.PessoaFisica__c || 'Documento Faltante'}`;
+            alert(alertMessage);
         } else {
             // Nenhum resultado encontrado
-            console.log('Nenhum contato encontrado');
-            alert('Contato inválido');
+            alert('Documento Faltante');
         }
     }
-    
 }
