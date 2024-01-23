@@ -23,9 +23,9 @@ export default class ItoChallange extends LightningElement {
         this.createdDocument = event.target.value;
 
         // Verificar o número de dígitos e determinar se é CPF ou CNPJ
-        if (this.createdDocument.length === 9) {
+        if (this.createdDocument.length === 11) {
             this.selectedType = 'PessoaFisica__c';
-        } else if (this.createdDocument.length === 11) {
+        } else if (this.createdDocument.length === 14) {
             this.selectedType = 'PessoaJuridica__c';
         } else {
             // Zerar o tipo se não for nem CPF nem CNPJ
