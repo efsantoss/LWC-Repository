@@ -3,29 +3,37 @@
         <div class="slds-m-horizontal_small">
             <div class="slds-size_1-of-1 slds-medium-size_2-of-4">
                 <lightning-input 
-                label="Nome" value={createdName} 
-                onchange={handleInputName} 
-                class="slds-m-horizontal_medium">
-            </lightning-input>
+                    label="Nome" 
+                    value={createdName} 
+                    onchange={handleInputName} 
+                    class="slds-m-horizontal_medium">
+                </lightning-input>
             </div>
             <div class="slds-size_1-of-1 slds-medium-size_2-of-4">
                 <lightning-input 
-                label="Sobrenome" 
-                value={createdLastName} 
-                onchange={handleInputLastName} 
-                class="slds-m-horizontal_medium">
-            </lightning-input>
+                    label="Sobrenome" 
+                    value={createdLastName} 
+                    onchange={handleInputLastName} 
+                    class="slds-m-horizontal_medium">
+                </lightning-input>
             </div>
-                <lightning-input
-                label="Documento"
-                value={createdDocument}
-                onchange={handleInputDocument}
-                class="slds-m-horizontal_medium"
-        ></lightning-input>
 
-            <div class="slds-size_1-of-1 slds-medium-size_2-of-4">
+            <div class="slds-size_1-of-1 slds-medium-size_2-of-4 slds-text-align_right">
+                <lightning-input
+                    label="Documento"
+                    value={createdDocument}
+                    onchange={handleInputDocument}
+                    class="slds-m-horizontal_medium"
+                ></lightning-input>
+
                 <p></p>
-                <lightning-button variant="brand" label="Criar Contato" title="Criar Contato" onclick={handleClick} class="slds-m-left_x-small slds-col_bump-left"></lightning-button>
+                <lightning-button 
+                    variant="brand" 
+                    label="Criar Contato" 
+                    title="Criar Contato" 
+                    onclick={handleClick} 
+                    class="slds-m-left_x-small">
+                </lightning-button>
             </div>
 
             <div class="slds-m-horizontal_medium"></div>
