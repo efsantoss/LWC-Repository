@@ -23,9 +23,9 @@ export default class ItoChallange extends LightningElement {
         this.createdDocument = event.target.value;
 
         // Verificar o número de dígitos e determinar se é CPF ou CNPJ
-        if (this.createdDocument.length === 9) {
+        if (this.createdDocument.length === 11) {
             this.selectedType = 'PessoaFisica__c';
-        } else if (this.createdDocument.length === 11) {
+        } else if (this.createdDocument.length === 14) {
             this.selectedType = 'PessoaJuridica__c';
         } else {
             // Zerar o tipo se não for nem CPF nem CNPJ
@@ -38,12 +38,6 @@ export default class ItoChallange extends LightningElement {
     }
 
     handleClick() {
-        // Verificar se um tipo de pessoa foi selecionado
-        if (!this.selectedType) {
-            alert('Selecione o tipo de pessoa (PF ou PJ) antes de criar o contato.');
-            return;
-        }
-
         // Verificar se o CPF ou CNPJ foi fornecido com base no tipo selecionado
         if (!this.createdDocument) {
             alert('Digite o CPF ou CNPJ antes de criar o contato.');
