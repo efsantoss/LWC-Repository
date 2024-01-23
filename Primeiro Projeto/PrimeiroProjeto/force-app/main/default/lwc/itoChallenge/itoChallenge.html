@@ -3,16 +3,36 @@
         <div class="slds-m-horizontal_small">
             <lightning-input label="Nome" value={createdName} onchange={handleInputName} class="slds-m-horizontal_medium"></lightning-input>
             <lightning-input label="Sobrenome" value={createdLastName} onchange={handleInputLastName} class="slds-m-horizontal_medium"></lightning-input>
+            
+            <lightning-radio-group
+                label="Tipo de Pessoa"
+                options={typeOptions}
+                value={selectedType}
+                onchange={handleTypeChange}
+            ></lightning-radio-group>
+
+            <!-- Campo de entrada condicional para CPF ou CNPJ -->
+            <template if:true={selectedType}>
+                <lightning-input
+                    label={selectedType === 'PessoaFisica__c' ? 'CPF' : 'CNPJ'}
+                    value={createdDocument}
+                    onchange={handleInputDocument}
+                    class="slds-m-horizontal_medium"
+                ></lightning-input>
+            </template>
+
             <div class="slds-m-horizontal_small">
                 <p></p>
-                <lightning-button variant="brand" label="Pessoa Física" title="pessoaF" onclick={handleClickPF} class="slds-m-left_x-small"></lightning-button>
-                <lightning-button variant="brand" label="Pessoa Jurídica" title="pessoaJ" onclick={handleClickPJ} class="slds-m-left_x-small"></lightning-button>
+                <lightning-button variant="brand" label="Criar Contato" title="Criar Contato" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
             </div>
+
             <div class="slds-m-horizontal_medium"></div>
             <p></p>
+
             <div class="slds-m-horizontal_small slds-align_absolute-center">
                 <p></p>
             </div>
+
             <div>
                 <p>Nome: {createdName}</p>
                 <p>Sobrenome: {createdLastName}</p>
