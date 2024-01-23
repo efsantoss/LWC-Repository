@@ -8,7 +8,7 @@ export default class ItoChallange extends LightningElement {
     @track selectedType = '';
 
     get documentLabel() {
-        return this.selectedType === 'PessoaFisica__c' ? 'CPF' : 'CNPJ';
+        return 'Documento';
     }
 
     handleInputName(event) {
@@ -21,6 +21,16 @@ export default class ItoChallange extends LightningElement {
 
     handleInputDocument(event) {
         this.createdDocument = event.target.value;
+
+        // Verificar o número de dígitos e determinar se é CPF ou CNPJ
+        if (this.createdDocument.length === 9) {
+            this.selectedType = 'PessoaFisica__c';
+        } else if (this.createdDocument.length === 11) {
+            this.selectedType = 'PessoaJuridica__c';
+        } else {
+            // Zerar o tipo se não for nem CPF nem CNPJ
+            this.selectedType = '';
+        }
     }
 
     handleTypeChange(event) {

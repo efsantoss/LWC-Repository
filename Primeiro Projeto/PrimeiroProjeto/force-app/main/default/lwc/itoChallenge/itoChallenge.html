@@ -4,22 +4,14 @@
             <lightning-input label="Nome" value={createdName} onchange={handleInputName} class="slds-m-horizontal_medium"></lightning-input>
             <lightning-input label="Sobrenome" value={createdLastName} onchange={handleInputLastName} class="slds-m-horizontal_medium"></lightning-input>
             
-            <lightning-radio-group
-                label="Tipo de Pessoa"
-                options={typeOptions}
-                value={selectedType}
-                onchange={handleTypeChange}
-            ></lightning-radio-group>
+            <label>Documento</label>
 
-            <!-- Campo de entrada condicional para CPF ou CNPJ -->
-            <template if:true={selectedType}>
-                <lightning-input
-                    label={documentLabel}
-                    value={createdDocument}
-                    onchange={handleInputDocument}
-                    class="slds-m-horizontal_medium"
-                ></lightning-input>
-            </template>
+            <lightning-input
+                label="Documento"
+                value={createdDocument}
+                onchange={handleInputDocument}
+                class="slds-m-horizontal_medium"
+            ></lightning-input>
 
             <div class="slds-m-horizontal_small">
                 <p></p>
