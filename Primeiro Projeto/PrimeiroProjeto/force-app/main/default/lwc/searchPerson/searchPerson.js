@@ -32,12 +32,17 @@ export default class SearchPerson extends LightningElement {
             // Obter o primeiro contato encontrado
             const firstContact = this.contacts.data[0];
 
-            // Exibir informações do contato encontrado
-            const alertMessage = `Nome: ${firstContact.FirstName}\nSobrenome: ${firstContact.LastName}\nTipo: ${firstContact.PessoaJuridica__c || firstContact.PessoaFisica__c || 'Documento Faltante'}`;
+            // Construir mensagem de alerta com base na presença do documento
+            let alertMessage = `Nome: ${firstContact.FirstName}\nSobrenome: ${firstContact.LastName}`;
+            
+            if (firstContact.PessoaJuridica__c || firstContact.PessoaFisica__c) {
+                alertMessage += `\nDocumento: ${firstContact.PessoaJuridica__c || firstContact.PessoaFisica__c}`;
+            }
+
             alert(alertMessage);
         } else {
             // Nenhum resultado encontrado
-            alert('Documento Faltante');
+            alert('Contato Inválido');
         }
     }
 }
