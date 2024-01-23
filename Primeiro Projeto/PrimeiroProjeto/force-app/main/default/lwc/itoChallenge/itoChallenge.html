@@ -3,9 +3,15 @@
         <div class="slds-m-horizontal_small">
             <lightning-input label="Nome" value={createdName} onchange={handleInputName} class="slds-m-horizontal_medium"></lightning-input>
             <lightning-input label="Sobrenome" value={createdLastName} onchange={handleInputLastName} class="slds-m-horizontal_medium"></lightning-input>
+            <div class="slds-m-horizontal_small">
+                <p></p>
+                <lightning-button variant="brand" label="Pessoa Física" title="pessoaF" onclick={handleClickPF} class="slds-m-left_x-small"></lightning-button>
+                <lightning-button variant="brand" label="Pessoa Jurídica" title="pessoaJ" onclick={handleClickPJ} class="slds-m-left_x-small"></lightning-button>
+            </div>
+            <div class="slds-m-horizontal_medium"></div>
             <p></p>
             <div class="slds-m-horizontal_small slds-align_absolute-center">
-                <lightning-button label="Criar Contato" title="Criar Contato" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+                <p></p>
             </div>
             <div>
                 <p>Nome: {createdName}</p>

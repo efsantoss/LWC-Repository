@@ -1,3 +1,19 @@
 <template>
+    <div>
+        <lightning-card title={detalhesDoCurso.nomeDoCurso}>
+            <lightning-button label="Ingressar" slot="actions"></lightning-button>
+            <div class="slds-var-m-left_medium">
+                <ul>
+                    <li>Duração:{detalhesDoCurso.duracao}</li>
+                    <li> Valor: {detalhesDoCurso.valor}</li>
+                </ul>
+            </div>
+
+            <div class="slds-text-heading_large slds-text-color_succes" slot="footer">
+                {detalhesDoCurso.avaliacao}
+            </div>
+
+        </lightning-card>
+    </div>
     
 </template>

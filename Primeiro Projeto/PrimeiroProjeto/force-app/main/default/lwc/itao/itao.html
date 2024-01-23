@@ -1,0 +1,31 @@
+<template>
+    <lightning-card title="Novo contato" icon-name="custom:custom10">
+        <div class="slds-m-horizontal_medium">
+            <lightning-button variant="brand" label="Pessoa Física" title="pessoaF" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+            <lightning-button variant="brand" label="Pessoa Jurídica" title="pessoaJ" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+            <div class="slds-m-horizontal_medium"></div>
+
+            <template if:true={isPF}>
+                <div class="slds-m-vertical_medium">
+                    <lightning-input label="First Name" type="text" value={nome} onchange={onHandleNome}></lightning-input>
+                    <lightning-input label="Last Name" type="text" value={sobrenome} onchange={onHandleSobrenome}></lightning-input>
+                    <lightning-input label="CPF" type="text" value={cpf} onchange={onHandleCPForCNPJ}></lightning-input>
+                </div>
+            </template>
+
+            <template if:true={isPJ}>
+                <div class="slds-m-vertical_medium">
+                    <lightning-input label="First Name" type="text" value={nome} onchange={onHandleNome}></lightning-input>
+                    <lightning-input label="Last Name" type="text" value={sobrenome} onchange={onHandleSobrenome}></lightning-input>
+                    <lightning-input label="CNPJ" type="text" value={cnpj} onchange={onHandleCPForCNPJ}></lightning-input>
+                </div>
+            </template>
+
+            <template if:true={inserir}>
+                <div class="slds-m-top_medium">
+                    <lightning-button variant="success" label="Inserir Contato" onclick={handleInserirContato}></lightning-button>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

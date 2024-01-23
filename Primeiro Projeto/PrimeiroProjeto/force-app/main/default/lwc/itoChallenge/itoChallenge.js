@@ -4,6 +4,7 @@ import createContact from '@salesforce/apex/Ito.createContact';
 export default class ItoChallange extends LightningElement {
     @track createdName = '';
     @track createdId = '';
+    @track createdLastName = ' ';
 
     handleInputName(event) {
         this.createdName = event.target.value;
@@ -13,22 +14,37 @@ export default class ItoChallange extends LightningElement {
         this.createdLastName = event.target.value;
     }
 
-    handleClick() {
+    handleClickPF(){
         createContact({ firstName: this.createdName, lastName: this.createdLastName })
-            .then(result => {
-                // Tratamento do resultado, como exibir uma mensagem de sucesso
-                alert(result);
+        .then(result => {
+            // Alerta para mostrar na tela 
+            alert(result);
 
-                // Disparar um evento personalizado para notificar outros componentes, se necessário
-                const successEvent = new CustomEvent('successcontactcreated', {
-                    detail: { message: 'Contato inserido com sucesso!' }
-                });
-                this.dispatchEvent(successEvent);
-            })
-            .catch(error => {
-                // Tratamento de erro, como exibir uma mensagem de erro
-                console.error(error);
-                alert('Erro ao inserir contato');
+            const successEvent = new CustomEvent('successcontactcreated', {
+                detail: { message: 'Contato inserido com sucesso!' }
             });
+            this.dispatchEvent(successEvent);
+        })
+        .catch(error => {
+            console.error(error);
+            alert('Erro ao inserir contato');
+        });
+    }
+
+    handleClickPJ(){
+        createContact({ firstName: this.createdName, lastName: this.createdLastName })
+        .then(result => {
+            // Alerta para mostrar na tela 
+            alert(result);
+
+            const successEvent = new CustomEvent('successcontactcreated', {
+                detail: { message: 'Contato inserido com sucesso!' }
+            });
+            this.dispatchEvent(successEvent);
+        })
+        .catch(error => {
+            console.error(error);
+            alert('Erro ao inserir contato');
+        });
     }
 }

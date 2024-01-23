@@ -7,13 +7,5 @@
         <target>lightning__RecordPage</target>
         <target>lightning__HomePage</target>
 
-    </targets>
-    <targetConfigs>
-        <targetConfig targets="lightning__RecordPage">
-            <objects>
-                <object>Account</object>
-                <object>Contact</object>
-            </objects>
-        </targetConfig>
-    </targetConfigs>
+    </targets> 
 </LightningComponentBundle>

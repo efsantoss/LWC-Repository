@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Componente Pai">
+        <lightning-button variant="brand" label="Esconde e Exibe" title="Primary Action" 
+        onclick={handleAction} class="slds-m-left_x-small"></lightning-button>
+    </lightning-card>
+    <template if:true={show}>
+        <c-disconnected-filho></c-disconnected-filho>
+    </template>
+</template>
