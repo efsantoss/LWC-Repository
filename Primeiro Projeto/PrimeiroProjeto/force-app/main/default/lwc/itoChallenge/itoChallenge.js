@@ -74,3 +74,4 @@ export default class ItoChallange extends LightningElement {
         });
     }
 }
+

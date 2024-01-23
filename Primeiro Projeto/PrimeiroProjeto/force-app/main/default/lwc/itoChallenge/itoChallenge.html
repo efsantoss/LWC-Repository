@@ -1,21 +1,41 @@
 <template>
     <lightning-card>
         <div class="slds-m-horizontal_small">
-            <lightning-input label="Nome" value={createdName} onchange={handleInputName} class="slds-m-horizontal_medium"></lightning-input>
-            <lightning-input label="Sobrenome" value={createdLastName} onchange={handleInputLastName} class="slds-m-horizontal_medium"></lightning-input>
+            <lightning-input 
+            label="Nome" 
+            value={createdName} 
+            onchange={handleInputName} 
+            class="slds-m-horizontal_medium">
+        </lightning-input>
+
+            <lightning-input 
+            label="Sobrenome" 
+            value={createdLastName} 
+            onchange={handleInputLastName} 
+            class="slds-m-horizontal_medium">
+        </lightning-input>
             
-            <label>Documento</label>
+        <lightning-input
+            label="Documento"
+            value={createdDocument}
+            onchange={handleInputDocument}
+            class="slds-m-horizontal_medium"
+        ></lightning-input>
 
-            <lightning-input
-                label="Documento"
-                value={createdDocument}
-                onchange={handleInputDocument}
-                class="slds-m-horizontal_medium"
-            ></lightning-input>
-
-            <div class="slds-m-horizontal_small">
+            <div class="slds-m-horizontal_small slds-m-top_medium">
                 <p></p>
-                <lightning-button variant="brand" label="Criar Contato" title="Criar Contato" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+                <div>
+                    <p>O contato será Salvo como:</p>
+                    <p>Nome: {createdName}</p>
+                    <p>Sobrenome: {createdLastName}</p>
+                </div>
+                <lightning-button 
+                variant="brand" 
+                label="Criar Contato" 
+                title="Criar Contato" 
+                onclick={handleClick} 
+                class="slds-m-right_x-small">
+            </lightning-button>
             </div>
 
             <div class="slds-m-horizontal_medium"></div>
@@ -25,10 +45,7 @@
                 <p></p>
             </div>
 
-            <div>
-                <p>Nome: {createdName}</p>
-                <p>Sobrenome: {createdLastName}</p>
-            </div>
+           
         </div>
     </lightning-card>
 </template>
