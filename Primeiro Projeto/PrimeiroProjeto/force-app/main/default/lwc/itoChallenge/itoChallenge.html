@@ -1,15 +1,14 @@
 <template>
-    <lightning-card title="Pagina de Cadastro" icon-name="custom:custom15">
+    <lightning-card class="slds-align_absolute-center" title="Pagina de Cadastro" icon-name="custom:custom15" style="background-color: rgb(153, 79, 196);"
+    >
         <div class="slds-m-horizontal_small">
             <lightning-input 
-            style="background-color: blue;"
             label="Nome" 
             value={createdName} 
             onchange={handleInputName} 
             class="slds-m-horizontal_medium">
         </lightning-input>
             <lightning-input 
-            style="background-color: blue;"
             label="Sobrenome" 
             value={createdLastName} 
             onchange={handleInputLastName} 
@@ -17,7 +16,6 @@
         </lightning-input>
         
         <lightning-input
-            style="background-color: blue;"
             label="Documento"
             value={createdDocument}
             onchange={handleInputDocument}
@@ -26,7 +24,7 @@
 
             <div class="slds-m-horizontal_small">
                 <p></p>
-                <lightning-button variant="brand" label="Criar Contato" title="Criar Contato" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+                <lightning-button variant="brand" label="Criar Contato" title="Criar Contato" onclick={handleClick} class="slds-align_absolute-center slds-m-top_large"></lightning-button>
             </div>
 
             <div class="slds-m-horizontal_medium"></div>
@@ -36,11 +34,6 @@
                 <p></p>
             </div>
 
-            <div>
-                <p>Nome: {createdName}</p>
-                <p>Sobrenome: {createdLastName}</p>
-                <p>Documento: {createdDocument}</p>
-            </div>
         </div>
     </lightning-card>
 </template>
