@@ -28,14 +28,15 @@
                     <p>O contato será Salvo como:</p>
                     <p>Nome: {createdName}</p>
                     <p>Sobrenome: {createdLastName}</p>
+                    <lightning-button 
+                    variant="brand" 
+                    label="Criar Contato" 
+                    title="Criar Contato" 
+                    onclick={handleClick} 
+                    class="slds-m-left_large">
+                </lightning-button>
                 </div>
-                <lightning-button 
-                variant="brand" 
-                label="Criar Contato" 
-                title="Criar Contato" 
-                onclick={handleClick} 
-                class="slds-m-right_x-small">
-            </lightning-button>
+               
             </div>
 
             <div class="slds-m-horizontal_medium"></div>
