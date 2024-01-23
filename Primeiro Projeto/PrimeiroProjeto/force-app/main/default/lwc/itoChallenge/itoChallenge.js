@@ -39,8 +39,8 @@ export default class ItoChallange extends LightningElement {
 
     handleClick() {
         // Verificar se o CPF ou CNPJ foi fornecido com base no tipo selecionado
-        if (!this.createdDocument) {
-            alert('Digite o CPF ou CNPJ Valido antes de criar o contato.');
+        if (!this.createdDocument || !this.selectedType) {
+            alert('Digite um CPF ou CNPJ válido e selecione o tipo antes de criar o contato.');
             return;
         }
 
@@ -68,4 +68,3 @@ export default class ItoChallange extends LightningElement {
         });
     }
 }
-

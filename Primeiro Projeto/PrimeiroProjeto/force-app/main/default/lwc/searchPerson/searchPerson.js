@@ -37,4 +37,5 @@ export default class searchPerson extends LightningElement {
             alert('Contato inválido');
         }
     }
+    
 }
