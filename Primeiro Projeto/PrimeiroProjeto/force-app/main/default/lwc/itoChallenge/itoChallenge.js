@@ -7,6 +7,10 @@ export default class ItoChallange extends LightningElement {
     @track createdDocument = '';
     @track selectedType = '';
 
+    get documentLabel() {
+        return this.selectedType === 'PessoaFisica__c' ? 'CPF' : 'CNPJ';
+    }
+
     handleInputName(event) {
         this.createdName = event.target.value;
     }

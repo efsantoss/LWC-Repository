@@ -11,17 +11,16 @@
                 onchange={handleTypeChange}
             ></lightning-radio-group>
 
+            <!-- Campo de entrada condicional para CPF ou CNPJ -->
             <template if:true={selectedType}>
                 <lightning-input
-                    label={selectedType === 'PessoaFisica__c' ? 'CPF' : 'CNPJ'}
+                    label={documentLabel}
                     value={createdDocument}
                     onchange={handleInputDocument}
                     class="slds-m-horizontal_medium"
                 ></lightning-input>
             </template>
-            //LWC1058: Invalid HTML syntax: unexpected-character-in-attribute-name. For more information, please visit https://html.spec.whatwg.org/multipage/parsing.html#parse-error-unexpected-character-in-attribute-namelwc
-            
-            
+
             <div class="slds-m-horizontal_small">
                 <p></p>
                 <lightning-button variant="brand" label="Criar Contato" title="Criar Contato" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
