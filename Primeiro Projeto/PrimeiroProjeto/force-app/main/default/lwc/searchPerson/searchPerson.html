@@ -1,0 +1,43 @@
+<template>
+    <lightning-card class="slds-m-left_large" title="Consulta de Cadastro" icon-name="action:description" style="background-color: rgb(153, 79, 196);">
+        <div class="slds-m-horizontal_small">
+            <lightning-input 
+                label="Nome" 
+                value={searchName} 
+                onchange={handleInputName} 
+                class="slds-m-horizontal_medium slds-hint-parent"
+            ></lightning-input>
+            <lightning-input 
+                label="Sobrenome" 
+                value={searchLastName} 
+                onchange={handleInputLastName} 
+                class="slds-m-horizontal_medium slds-hint-parent"
+            ></lightning-input>
+            <lightning-input
+                label="Documento (CPF ou CNPJ)"
+                value={searchDocument}
+                onchange={handleInputDocument}
+                class="slds-m-horizontal_medium slds-hint-parent"
+            ></lightning-input>
+
+            <div class="slds-m-horizontal_small">
+                <p></p>
+                <lightning-button 
+                    variant="brand" 
+                    label="Consultar Cadastro" 
+                    title="Consultar Cadastro" 
+                    onclick={handleClick} 
+                    class="slds-align_absolute-center slds-m-top_large"
+                ></lightning-button>
+            </div>
+
+            <div class="slds-m-horizontal_medium"></div>
+            <p></p>
+
+            <div class="slds-m-horizontal_small slds-align_absolute-center">
+                <p></p>
+            </div>
+        </div>
+    </lightning-card>
+</template>
+
