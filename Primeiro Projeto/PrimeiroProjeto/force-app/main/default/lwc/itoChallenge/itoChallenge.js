@@ -38,12 +38,6 @@ export default class ItoChallange extends LightningElement {
     }
 
     handleClick() {
-        // Verificar se um tipo de pessoa foi selecionado
-        if (!this.selectedType) {
-            alert('Insira o tipo de Documento (CPF ou CNPJ) antes de criar o contato.');
-            return;
-        }
-
         // Verificar se o CPF ou CNPJ foi fornecido com base no tipo selecionado
         if (!this.createdDocument) {
             alert('Digite o CPF ou CNPJ Valido antes de criar o contato.');

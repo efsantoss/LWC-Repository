@@ -1,52 +1,46 @@
 <template>
     <lightning-card>
         <div class="slds-m-horizontal_small">
-            <lightning-input 
-            label="Nome" 
-            value={createdName} 
-            onchange={handleInputName} 
-            class="slds-m-horizontal_medium">
-        </lightning-input>
-
-            <lightning-input 
-            label="Sobrenome" 
-            value={createdLastName} 
-            onchange={handleInputLastName} 
-            class="slds-m-horizontal_medium">
-        </lightning-input>
-            
-        <lightning-input
-            label="Documento"
-            value={createdDocument}
-            onchange={handleInputDocument}
-            class="slds-m-horizontal_medium"
+            <div class="slds-size_1-of-1 slds-medium-size_2-of-4">
+                <lightning-input 
+                label="Nome" value={createdName} 
+                onchange={handleInputName} 
+                class="slds-m-horizontal_medium">
+            </lightning-input>
+            </div>
+            <div class="slds-size_1-of-1 slds-medium-size_2-of-4">
+                <lightning-input 
+                label="Sobrenome" 
+                value={createdLastName} 
+                onchange={handleInputLastName} 
+                class="slds-m-horizontal_medium">
+            </lightning-input>
+            </div>
+                <lightning-input
+                label="Documento"
+                value={createdDocument}
+                onchange={handleInputDocument}
+                class="slds-m-horizontal_medium"
         ></lightning-input>
 
-            <div class="slds-m-horizontal_small slds-m-top_medium">
+            <div class="slds-size_1-of-1 slds-medium-size_2-of-4">
                 <p></p>
-                <div>
-                    <p>O contato será Salvo como:</p>
-                    <p>Nome: {createdName}</p>
-                    <p>Sobrenome: {createdLastName}</p>
-                    <lightning-button 
-                    variant="brand" 
-                    label="Criar Contato" 
-                    title="Criar Contato" 
-                    onclick={handleClick} 
-                    class="slds-m-left_large">
-                </lightning-button>
-                </div>
-               
+                <lightning-button variant="brand" label="Criar Contato" title="Criar Contato" onclick={handleClick} class="slds-m-left_x-small slds-col_bump-left"></lightning-button>
             </div>
 
             <div class="slds-m-horizontal_medium"></div>
             <p></p>
 
-            <div class="slds-m-horizontal_small slds-align_absolute-center">
+            <div class="slds-size_1-of-1 slds-medium-size_2-of-4 slds-align_absolute-center">
                 <p></p>
             </div>
 
-           
+            <div class="slds-size_1-of-1 slds-medium-size_2-of-4">
+                <p> O Contato será salvo como:</p>
+                <p>Nome: {createdName}</p>
+                <p>Sobrenome: {createdLastName}</p>
+                <p>Documento: {createdDocument}</p>
+            </div>
         </div>
     </lightning-card>
 </template>
