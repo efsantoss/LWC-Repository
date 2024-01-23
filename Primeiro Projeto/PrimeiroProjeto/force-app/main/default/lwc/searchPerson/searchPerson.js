@@ -10,8 +10,6 @@ export default class SearchPerson extends LightningElement {
         return 'Documento';
     }
 
-    //Ajuda do INDIANO
-
     // Utilize o @wire para buscar contatos com base nas informações fornecidas
     @wire(searchContacts, { firstName: '$searchName', lastName: '$searchLastName', document: '$searchDocument' })
     contacts;
